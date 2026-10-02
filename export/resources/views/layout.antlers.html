@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ seo_title ?? title | sanitize }} — {{ brand:name | sanitize }}</title>
+<meta name="description" content="{{ seo_description ?? summary ?? intro ?? brand:tagline | sanitize }}">
+<link rel="canonical" href="{{ permalink }}">
+<meta property="og:title" content="{{ seo_title ?? title | sanitize }} — {{ brand:name | sanitize }}">
+<meta property="og:description" content="{{ seo_description ?? summary ?? intro ?? brand:tagline | sanitize }}">
+<meta property="og:type" content="website">
+{{ if social_image }}<meta property="og:image" content="{{ social_image:permalink }}">{{ /if }}
+{{ vite src="resources/js/site.js|resources/css/site.css" }}
+</head>
+<body class="bg-ink text-paper antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+{{ partial:partials/header }}
+<main id="main" tabindex="-1">{{ template_content }}</main>
+{{ partial:partials/footer }}
+</body></html>

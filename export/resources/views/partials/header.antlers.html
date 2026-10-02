@@ -1,0 +1,13 @@
+<header class="site-header">
+<div class="shell flex min-h-24 items-center justify-between gap-6">
+<a class="wordmark" href="/" aria-label="{{ brand:name | sanitize }} home"><span class="brand-mark" aria-hidden="true">↗</span>{{ brand:name | sanitize }}<span class="wordmark-dot">.</span></a>
+<nav class="hidden items-center gap-7 text-sm lg:flex" aria-label="Main navigation">
+{{ nav:main }}<a class="nav-link" href="{{ url }}" {{ if is_current }}aria-current="page"{{ /if }}>{{ title | sanitize }}</a>{{ /nav:main }}
+</nav>
+<div class="flex items-center gap-5"><a class="header-cta hidden sm:inline-flex" href="{{ brand:cta_link }}">{{ brand:cta_label | sanitize }} <span aria-hidden="true">↗</span></a>
+<button class="menu-toggle lg:hidden" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu"><span data-menu-label>Menu</span><span aria-hidden="true">≡</span></button></div>
+</div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+{{ nav:main }}<a href="{{ url }}" {{ if is_current }}aria-current="page"{{ /if }}>{{ title | sanitize }}<span aria-hidden="true">↗</span></a>{{ /nav:main }}
+<a href="{{ brand:cta_link }}">{{ brand:cta_label | sanitize }}<span aria-hidden="true">↗</span></a>
+</nav></header>

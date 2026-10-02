@@ -1,0 +1,17 @@
+<section class="{{ if hero_style == 'image' }}hero-image{{ else }}hero-editorial{{ /if }}">
+{{ if hero_style == 'image' && hero_image }}<img class="hero-photo" src="{{ hero_image:url }}" alt="{{ hero_image_alt | sanitize }}" fetchpriority="high"><div class="hero-shade" aria-hidden="true"></div>{{ /if }}
+<div class="shell relative z-10"><div class="hero-meta"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{{ eyebrow | sanitize }}</p><span class="hidden font-mono text-xs md:block">{{ brand:tagline | sanitize }}</span></div>
+<h1 class="hero-heading whitespace-pre-line">{{ headline | sanitize }}</h1>
+<div class="hero-bottom"><p class="max-w-md text-lg leading-relaxed">{{ intro | sanitize }}</p>{{ if link && link_label }}<a class="button {{ if hero_style == 'image' }}button-white{{ else }}button-dark{{ /if }}" href="{{ link }}">{{ link_label | sanitize }}<span aria-hidden="true">↗</span></a>{{ /if }}</div>
+</div></section>
+{{ sections }}
+{{ if type == 'intro' }}{{ partial:sections/intro }}
+{{ elseif type == 'features' }}{{ partial:sections/features }}
+{{ elseif type == 'split' }}{{ partial:sections/split }}
+{{ elseif type == 'services' }}{{ partial:sections/services }}
+{{ elseif type == 'news' }}{{ partial:sections/news }}
+{{ elseif type == 'careers' }}{{ partial:sections/careers }}
+{{ elseif type == 'locations' }}{{ partial:sections/locations }}
+{{ elseif type == 'faq' }}{{ partial:sections/faq }}
+{{ elseif type == 'quote' || type == 'contact' }}{{ partial:sections/quote }}{{ /if }}
+{{ /sections }}

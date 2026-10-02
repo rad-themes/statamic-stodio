@@ -1,0 +1,8 @@
+title: Newsroom
+template: detail
+layout: layout
+revisions: false
+route: '{mount}/{slug}'
+mount: bd80be89-3baa-5b14-a0d6-f0b9444d199e
+sort_dir: asc
+date: false

@@ -1,0 +1,25 @@
+title: 'Search and sharing'
+fields:
+  -
+    handle: seo_title
+    field:
+      type: text
+      display: 'Seo Title'
+      instructions: 'Optional browser and search title.'
+  -
+    handle: seo_description
+    field:
+      type: textarea
+      display: 'Seo Description'
+      character_limit: 160
+  -
+    handle: social_image
+    field:
+      type: assets
+      display: 'Social Image'
+      container: assets
+      max_files: 1
+      mode: list
+      restrict: false
+      validate:
+        - image

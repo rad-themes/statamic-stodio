@@ -1,0 +1,9 @@
+{
+  "title": "Projects",
+  "template": "cases-detail",
+  "layout": "layout",
+  "route": "{mount}/{slug}",
+  "mount": "2496ec83-8760-5d93-8dff-ee9f7175776f",
+  "date": false,
+  "revisions": false
+}

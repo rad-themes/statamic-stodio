@@ -1,0 +1,74 @@
+title: 'Brand and contact'
+tabs:
+  main:
+    display: Brand
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: tagline
+            field:
+              type: text
+              display: Tagline
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              input_type: email
+              validate:
+                - required
+                - email
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Address
+          -
+            handle: footer_text
+            field:
+              type: textarea
+              display: 'Footer Text'
+          -
+            handle: cta_heading
+            field:
+              type: textarea
+              display: 'Cta Heading'
+          -
+            handle: cta_label
+            field:
+              type: text
+              display: 'Cta Label'
+          -
+            handle: cta_link
+            field:
+              type: link
+              display: 'Cta Link'
+              collections:
+                - pages
+          -
+            handle: support_label
+            field:
+              type: text
+              display: 'Support Label'
+          -
+            handle: support_url
+            field:
+              type: text
+              display: 'Support Url'
+              input_type: url
+              validate:
+                - nullable
+                - url
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Copyright

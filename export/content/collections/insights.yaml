@@ -1,0 +1,9 @@
+{
+  "title": "Journal",
+  "template": "insights-detail",
+  "layout": "layout",
+  "route": "{mount}/{slug}",
+  "mount": "a8fb142e-6f43-5ab6-b2f0-5958bb04f6c8",
+  "date": false,
+  "revisions": false
+}

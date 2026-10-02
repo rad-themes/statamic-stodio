@@ -1,0 +1,16 @@
+{
+    "name": "rad-themes/statamic-stodio",
+    "description": "An architecture and interior design studio starter kit for Statamic by Rad Themes.",
+    "type": "statamic-starter-kit",
+    "license": "proprietary",
+    "keywords": ["statamic", "starter-kit", "architecture", "interior", "tailwindcss"],
+    "authors": [{"name": "Rad Themes", "homepage": "https://statamic.com/creators/rad-themes"}],
+    "support": {"issues": "https://github.com/rad-themes/statamic-stodio/issues"},
+    "require": {"php": "^8.3", "statamic/cms": "^6.34"},
+    "extra": {
+        "statamic": {
+            "name": "Stodio",
+            "description": "An architecture and interior design studio starter kit for Statamic by Rad Themes."
+        }
+    }
+}

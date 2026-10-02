@@ -1,0 +1,187 @@
+title: Portal
+tabs:
+  main:
+    display: Portal
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: project_status
+            field:
+              type: text
+              display: 'Project status'
+              instructions: 'Shown at the top of the portal, e.g. "In progress".'
+          -
+            handle: welcome
+            field:
+              type: bard
+              display: 'Welcome message'
+              buttons: [h2, h3, bold, italic, unorderedlist, orderedlist, anchor]
+          -
+            handle: phases
+            field:
+              type: grid
+              display: Phases
+              mode: stacked
+              add_row: 'Add phase'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Phase title'
+                    validate:
+                      - required
+                -
+                  handle: modules
+                  field:
+                    type: replicator
+                    display: Modules
+                    button_label: 'Add module'
+                    sets:
+                      modules:
+                        display: Modules
+                        sets:
+                          link:
+                            display: Link
+                            icon: link
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: url
+                                field:
+                                  type: link
+                                  display: URL
+                                  validate:
+                                    - required
+                              -
+                                handle: button_label
+                                field:
+                                  type: text
+                                  display: 'Button label'
+                                  placeholder: Open
+                          file:
+                            display: 'File download'
+                            icon: file-content-list
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: files
+                                field:
+                                  type: assets
+                                  display: Files
+                                  instructions: 'Stored privately. Only people with access to this portal can download them.'
+                                  container: portal_files
+                                  validate:
+                                    - required
+                          upload:
+                            display: 'Client upload'
+                            icon: upload-cloud
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: upload_help
+                                field:
+                                  type: html
+                                  html: 'Uploaded files appear on this module in the portal, and in <strong>Assets → Portal Files → uploads</strong>.'
+                          content:
+                            display: 'Content page'
+                            icon: text-formatting-initial-letter
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: body
+                                field:
+                                  type: bard
+                                  display: Content
+                                  container: assets
+                                  buttons: [h2, h3, bold, italic, unorderedlist, orderedlist, quote, anchor, image, table]
+                          gallery:
+                            display: 'Image gallery'
+                            icon: media-image-picture-gallery
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: images
+                                field:
+                                  type: assets
+                                  display: Images
+                                  container: assets
+                                  mode: grid
+                                  validate:
+                                    - required
+                          embed:
+                            display: 'Embed'
+                            icon: media-computer-screen-tv
+                            fields:
+                              -
+                                import: 'client-portal::module'
+                              -
+                                handle: embed_url
+                                field:
+                                  type: text
+                                  input_type: url
+                                  display: 'Embed URL'
+                                  instructions: 'The embed/iframe URL from Figma, Loom, YouTube, Google Docs, Google Calendar, Typeform, etc.'
+                                  validate:
+                                    - required
+                                    - url
+                                    - 'starts_with:https://'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              validate:
+                - required
+          -
+            handle: clients
+            field:
+              type: users
+              display: Clients
+              instructions: 'Users who can see this portal.'
+              mode: select
+          -
+            handle: comments_enabled
+            field:
+              type: toggle
+              display: Messages
+              instructions: 'Let clients and your team send messages in this portal.'
+          -
+            handle: notification_emails
+            field:
+              type: list
+              display: 'Activity emails for this portal'
+              instructions: 'Overrides the addon setting, e.g. the project manager. Leave empty to use the default.'
+          -
+            handle: mute_notifications
+            field:
+              type: toggle
+              display: 'Mute activity emails'
+          -
+            handle: disable_reminders
+            field:
+              type: toggle
+              display: 'No due date reminders'
+          -
+            handle: is_template
+            field:
+              type: toggle
+              display: Template
+              instructions: 'Templates are never shown to clients. Duplicate them, or use the "Apply template" action.'

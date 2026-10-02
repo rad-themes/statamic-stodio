@@ -1,0 +1,8 @@
+title: Careers
+template: detail
+layout: layout
+revisions: false
+route: '{mount}/{slug}'
+mount: f91b8d09-6a97-51e0-8f28-cb063d773246
+sort_dir: asc
+date: false

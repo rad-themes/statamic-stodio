@@ -1,0 +1,9 @@
+<footer class="bg-ink text-paper"><div class="shell py-16 md:py-24">
+<div class="grid gap-8 border-b border-white/20 pb-16 md:grid-cols-[1fr_auto] md:items-end"><h2 class="display-heading whitespace-pre-line">{{ brand:cta_heading | sanitize }}</h2><a class="button button-orange" href="{{ brand:cta_link }}">{{ brand:cta_label | sanitize }}<span aria-hidden="true">↗</span></a></div>
+<div class="grid gap-12 py-12 md:grid-cols-[2fr_1fr_1fr]">
+<div><a class="wordmark" href="/">{{ brand:name | sanitize }}.</a><p class="mt-6 max-w-xs text-white/60">{{ brand:footer_text | sanitize }}</p></div>
+<nav aria-label="Footer navigation" class="flex flex-col gap-3 text-sm">{{ nav:main }}<a class="w-fit hover:text-signal" href="{{ url }}">{{ title | sanitize }}</a>{{ /nav:main }}</nav>
+<div class="text-sm"><p class="eyebrow mb-5 text-white/50">Get in touch</p><a class="underline underline-offset-4" href="mailto:{{ brand:email | sanitize }}">{{ brand:email | sanitize }}</a><p class="mt-5 whitespace-pre-line text-white/60">{{ brand:address | sanitize }}</p></div>
+</div>
+<div class="flex flex-wrap justify-between gap-4 border-t border-white/20 pt-7 font-mono text-xs text-white/50"><p>© {{ now format="Y" }} {{ brand:copyright | sanitize }}</p>{{ if brand:support_url }}<a href="{{ brand:support_url | sanitize }}">Built with {{ brand:support_label | sanitize }} ↗</a>{{ /if }}</div>
+</div></footer>

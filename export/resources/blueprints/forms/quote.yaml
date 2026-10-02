@@ -1,0 +1,60 @@
+title: 'Quote request'
+tabs:
+  main:
+    display: Request
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+                - 'max:120'
+              autocomplete: name
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              input_type: email
+              validate:
+                - required
+                - email
+                - 'max:254'
+              autocomplete: email
+          -
+            handle: company
+            field:
+              type: text
+              display: Company
+              validate:
+                - nullable
+                - 'max:160'
+          -
+            handle: origin
+            field:
+              type: text
+              display: Origin
+              validate:
+                - nullable
+                - 'max:160'
+          -
+            handle: destination
+            field:
+              type: text
+              display: Destination
+              validate:
+                - nullable
+                - 'max:160'
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              validate:
+                - required
+                - 'min:10'
+                - 'max:5000'

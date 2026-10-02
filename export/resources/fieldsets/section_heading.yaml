@@ -1,0 +1,19 @@
+title: 'Section heading'
+fields:
+  -
+    handle: eyebrow
+    field:
+      type: text
+      display: Eyebrow
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      validate:
+        - required
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description

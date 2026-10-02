@@ -1,0 +1,24 @@
+export_paths:
+  - content
+  - resources/blueprints/collections
+  - resources/blueprints/globals
+  - resources/blueprints/forms
+  - resources/blueprints/assets
+  - resources/fieldsets
+  - resources/forms
+  - resources/views/layout.antlers.html
+  - resources/views/page.antlers.html
+  - resources/views/services-detail.antlers.html
+  - resources/views/cases-detail.antlers.html
+  - resources/views/insights-detail.antlers.html
+  - resources/views/partials
+  - resources/views/errors/404.antlers.html
+  - resources/css/site.css
+  - resources/js/site.js
+  - public/assets/stodio
+  - public/build
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - config/filesystems.php
+  - tests/Feature/StodioKitTest.php

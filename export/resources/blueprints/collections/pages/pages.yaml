@@ -1,0 +1,300 @@
+title: Page
+tabs:
+  main:
+    display: Page
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: hero_style
+            field:
+              type: select
+              display: 'Hero Style'
+              options:
+                image: 'Full image'
+                editorial: Editorial
+              default: editorial
+              validate:
+                - required
+          -
+            handle: eyebrow
+            field:
+              type: text
+              display: Eyebrow
+          -
+            handle: headline
+            field:
+              type: textarea
+              display: Headline
+              validate:
+                - required
+          -
+            handle: intro
+            field:
+              type: textarea
+              display: Intro
+          -
+            handle: hero_image
+            field:
+              type: assets
+              display: 'Hero Image'
+              container: assets
+              max_files: 1
+              mode: list
+              restrict: false
+              validate:
+                - image
+          -
+            handle: hero_image_alt
+            field:
+              type: text
+              display: 'Hero Image Alt'
+          -
+            handle: link_label
+            field:
+              type: text
+              display: 'Link Label'
+          -
+            handle: link
+            field:
+              type: link
+              display: Link
+              collections:
+                - pages
+                - services
+                - news
+                - careers
+          -
+            handle: sections
+            field:
+              type: replicator
+              display: 'Page sections'
+              collapse: true
+              sets:
+                content:
+                  display: Content
+                  sets:
+                    intro:
+                      display: 'Editorial introduction'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: link_label
+                          field:
+                            type: text
+                            display: 'Link Label'
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                            collections:
+                              - pages
+                              - services
+                              - news
+                              - careers
+                    features:
+                      display: 'Feature cards'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: items
+                          field:
+                            type: grid
+                            display: Items
+                            fields:
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                                  validate:
+                                    - required
+                              -
+                                handle: text
+                                field:
+                                  type: textarea
+                                  display: Text
+                              -
+                                handle: image
+                                field:
+                                  type: assets
+                                  display: Image
+                                  container: assets
+                                  max_files: 1
+                                  mode: list
+                                  restrict: false
+                                  validate:
+                                    - image
+                            mode: stacked
+                            add_row: 'Add item'
+                    split:
+                      display: 'Image and story'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: image
+                          field:
+                            type: assets
+                            display: Image
+                            container: assets
+                            max_files: 1
+                            mode: list
+                            restrict: false
+                            validate:
+                              - image
+                        -
+                          handle: image_alt
+                          field:
+                            type: text
+                            display: 'Image Alt'
+                        -
+                          handle: dark
+                          field:
+                            type: toggle
+                            display: Dark
+                            default: false
+                        -
+                          handle: link_label
+                          field:
+                            type: text
+                            display: 'Link Label'
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                            collections:
+                              - pages
+                              - services
+                              - news
+                              - careers
+                    services:
+                      display: 'Services collection'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: limit
+                          field:
+                            type: integer
+                            display: Limit
+                            default: 6
+                            validate:
+                              - integer
+                              - 'min:1'
+                              - 'max:30'
+                    news:
+                      display: 'Newsroom collection'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: limit
+                          field:
+                            type: integer
+                            display: Limit
+                            default: 3
+                            validate:
+                              - integer
+                              - 'min:1'
+                              - 'max:30'
+                    careers:
+                      display: 'Open roles collection'
+                      fields:
+                        -
+                          import: section_heading
+                    locations:
+                      display: Locations
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: items
+                          field:
+                            type: grid
+                            display: Items
+                            fields:
+                              -
+                                handle: city
+                                field:
+                                  type: text
+                                  display: City
+                              -
+                                handle: country
+                                field:
+                                  type: text
+                                  display: Country
+                              -
+                                handle: description
+                                field:
+                                  type: text
+                                  display: Description
+                            mode: stacked
+                            add_row: 'Add item'
+                    faq:
+                      display: 'Questions and answers'
+                      fields:
+                        -
+                          import: section_heading
+                        -
+                          handle: items
+                          field:
+                            type: grid
+                            display: Items
+                            fields:
+                              -
+                                handle: question
+                                field:
+                                  type: text
+                                  display: Question
+                                  validate:
+                                    - required
+                              -
+                                handle: answer
+                                field:
+                                  type: textarea
+                                  display: Answer
+                                  validate:
+                                    - required
+                            mode: stacked
+                            add_row: 'Add item'
+                    quote:
+                      display: 'Quote request form'
+                      fields:
+                        -
+                          import: section_heading
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo
+  sidebar:
+    display: Settings
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              display: Slug
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
