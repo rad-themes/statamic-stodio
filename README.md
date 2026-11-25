@@ -20,8 +20,8 @@ Build a modern spatial design website with architectural capabilities, project p
 ## Installation
 
 ```sh
-composer config repositories.stodio path /absolute/path/to/statamic-stodio
-php please starter-kit:install rad-themes/statamic-stodio --local --without-user --clear-site
+composer config repositories.stodio path /absolute/path/to/stodio
+php please starter-kit:install rad-themes/stodio --local --without-user --clear-site
 php please make:user
 php please stache:refresh
 npm ci
